@@ -8,9 +8,27 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+// import custom styles
 import "/src/sass/style.scss";
 
+// Burger menu
+const burger = document.querySelector(".burger"),
+  close = document.querySelector(".header__menu-close"),
+  menu = document.querySelector(".header__menu");
+
+burger.addEventListener("click", () => {
+  menu.classList.add("header__menu_active");
+  // document.body.style.overflow = "hidden";
+  document.body.classList.add("scroll-off");
+});
+
+close.addEventListener("click", () => {
+  menu.classList.remove("header__menu_active");
+  // document.body.style.overflow = "";
+  document.body.classList.remove("scroll-off");
+});
+
+// Swiper slider
 try {
   // init Swiper:
   new Swiper(".works__slider", {
