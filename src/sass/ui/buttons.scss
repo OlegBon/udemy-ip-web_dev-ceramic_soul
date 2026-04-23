@@ -39,6 +39,24 @@
   }
 }
 
+.btn-read {
+  @include m.button;
+  width: 145px;
+  height: 32px;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid v.$ceramic;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btn-read {
+    transform: translateY(-1px);
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .btn-default {
     &:hover {
@@ -54,7 +72,8 @@
     }
   }
 
-  .btn-send {
+  .btn-send,
+  .btn-read {
     &:hover {
       color: v.$ceramic;
       border: 1px solid v.$ceramic;
