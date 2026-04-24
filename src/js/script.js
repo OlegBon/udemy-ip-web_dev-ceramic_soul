@@ -1,3 +1,4 @@
+// import purecss grids
 import "purecss/build/grids-min.css";
 import "purecss/build/grids-responsive-min.css";
 
@@ -8,6 +9,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+// import just-validate
+import JustValidate from "just-validate";
 // import custom styles
 import "/src/sass/style.scss";
 
@@ -86,3 +89,97 @@ try {
 
 // Обратите внимание, что значение block (в двух местах) можно спокойно поменять на flex, если вам это необходимо
 // Поменяла на flex, чтобы не было проблем с адаптивностью
+
+// Touch Form validation
+try {
+  const validatorTouch = new JustValidate(".touch__form");
+  // const validator = new JustValidate("form", { submitFormAutomatically: true });
+
+  validatorTouch
+    .addField("#name", [
+      {
+        rule: "required",
+        errorMessage: "Please enter your name",
+      },
+      {
+        rule: "minLength",
+        value: 3,
+        errorMessage: "Name must be at least 3 characters",
+      },
+    ])
+    .addField("#email", [
+      {
+        rule: "required",
+      },
+      {
+        rule: "email",
+      },
+    ])
+    .addField(
+      "#question",
+      [
+        {
+          rule: "required",
+        },
+        {
+          rule: "minLength",
+          value: 5,
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#question")
+          .parentElement.querySelector(".textarea-error-message"),
+      },
+    )
+    .addField(
+      "#checkbox",
+      [
+        {
+          rule: "required",
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#checkbox")
+          .parentElement.parentElement.querySelector(".checkbox-error-message"),
+      },
+    );
+} catch (e) {}
+
+// Footer Form validation
+try {
+  const validatorFooter = new JustValidate(".footer__form");
+  // const validator = new JustValidate("form", { submitFormAutomatically: true });
+
+  validatorFooter
+    .addField(
+      "#footer__email",
+      [
+        {
+          rule: "required",
+        },
+        {
+          rule: "email",
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#footer__email")
+          .parentElement.querySelector(".email-error-message"),
+      },
+    )
+    .addField(
+      "#footer__checkbox",
+      [
+        {
+          rule: "required",
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#footer__checkbox")
+          .parentElement.parentElement.querySelector(".checkbox-error-message"),
+      },
+    );
+} catch (e) {}

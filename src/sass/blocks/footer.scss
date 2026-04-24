@@ -4,6 +4,11 @@
   padding: 50px 0;
   background-color: v.$dark;
 
+  .just-validate-error-field {
+    outline: none;
+    border: 1px solid v.$ui-error;
+  }
+
   &_spaced {
     margin-top: 60px;
   }

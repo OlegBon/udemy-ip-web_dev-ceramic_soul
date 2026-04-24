@@ -115,7 +115,7 @@
             <img class="touch__img" src="/src/img/form/tea.jpg" alt="tea" />
           </div>
           <div class="pure-u-1 pure-u-lg-1-2 pure-u-xxl-3-5 touch__col">
-            <form action="#">
+            <form class="touch__form" action="#">
               <fieldset class="touch__fieldset">
                 <div class="touch__input-block">
                   <label class="touch__label" for="name">Name</label>
@@ -151,6 +151,7 @@
                 required
               >
               </textarea>
+              <div class="textarea-error-message"></div>
 
               <label class="touch__label touch__chek-block" for="checkbox">
                 <input
@@ -161,6 +162,7 @@
                 />
                 I agree with the <a href="#">terms</a>
               </label>
+              <div class="checkbox-error-message"></div>
 
               <button class="btn-send touch__btn" type="submit">
                 send request
@@ -204,8 +206,11 @@
                 placeholder="Enter your e-mail"
                 type="email"
                 class="footer__input"
+                id="footer__email"
                 required
               />
+              <div class="email-error-message"></div>
+
               <label class="footer__check-block" for="footer__checkbox">
                 <input
                   required
@@ -215,6 +220,8 @@
                 />
                 I agree with the <a href="#">terms</a></label
               >
+              <div class="checkbox-error-message"></div>
+
               <button class="btn-submit footer__form-btn">submit</button>
             </form>
           </div>
