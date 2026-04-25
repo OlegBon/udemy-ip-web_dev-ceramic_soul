@@ -99,5 +99,12 @@
     &__btn {
       margin: 50px auto 0 auto;
     }
+
+    &__cta {
+      // animation-name: slideIn;
+      // animation-duration: 3s;
+      // animation-timing-function: ease-out;
+      animation: slideIn 3s ease-out;
+    }
   }
 }

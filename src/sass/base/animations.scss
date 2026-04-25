@@ -1,0 +1,25 @@
+@keyframes slideIn {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes touchDecor {
+  0% {
+    transform: rotate(0deg);
+    // transform: translateY(0px);
+  }
+  50% {
+    transform: rotate(180deg);
+    // transform: translateY(-30px);
+  }
+  100% {
+    transform: rotate(360deg);
+    // transform: translateY(0px);
+  }
+}
