@@ -144,7 +144,21 @@ try {
           .querySelector("#checkbox")
           .parentElement.parentElement.querySelector(".checkbox-error-message"),
       },
-    );
+    )
+    .onSuccess((event) => {
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+
+      fetch("https://httpbin.org/post", {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Success Form Touch - form was sent", data);
+          form.reset();
+        });
+    });
 } catch (e) {}
 
 // Footer Form validation
@@ -181,5 +195,19 @@ try {
           .querySelector("#footer__checkbox")
           .parentElement.parentElement.querySelector(".checkbox-error-message"),
       },
-    );
+    )
+    .onSuccess((event) => {
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+
+      fetch("https://httpbin.org/post", {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Success Form Footer - form was sent", data);
+          form.reset();
+        });
+    });
 } catch (e) {}

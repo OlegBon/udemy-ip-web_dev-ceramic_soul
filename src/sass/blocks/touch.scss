@@ -3,6 +3,15 @@
 .touch {
   padding-top: 60px;
 
+  // autofill - автоматическое заполнение полей браузером,
+  // при котором стили полей могут быть изменены на дефолтные.
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: v.$dark;
+    -webkit-box-shadow: 0 0 0px 40rem #fff inset;
+  }
+
   .just-validate-error-field {
     outline: none;
     border: 1px solid v.$ui-error;
